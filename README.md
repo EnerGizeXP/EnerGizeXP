@@ -1,6 +1,129 @@
-# EnerGizeXP mod
+# EnerGizeXP
 
-A Minecraft Forge mod for Minecraft 1.12.2 that provides energy and XP conversion functionality with Mekanism compatibility.
+A Minecraft Forge mod for Minecraft 1.12.2 that adds XP to Energy conversion machines and lead-based materials.
+
+## Overview
+
+EnerGizeXP is a mod that introduces a new way to convert experience points into energy, along with a complete lead material system. The mod features three tiers of XP Converters, each with increasing efficiency and capacity, plus integration with Mekanism for enhanced processing options.
+
+## Features
+
+### XP Converters
+The mod adds three tiers of XP Converters that convert experience points into energy:
+
+- **Basic XP Converter**: Entry-level converter with moderate capacity
+- **Advanced XP Converter**: Mid-tier converter with improved efficiency  
+- **Elite XP Converter**: High-end converter with maximum performance
+
+### Lead Material System
+- **Lead Ore**: New ore that generates in the world
+- **Lead Ingot**: Crafting material obtained from smelting lead ore
+- **Lead Block**: Storage block for lead ingots
+- **Machine Casing**: Component used in crafting XP Converters
+- **Iron Gear**: Mechanical component for crafting
+
+### Mekanism Integration
+When Mekanism is installed, the mod adds:
+- Enrichment Chamber recipe for lead ore → 2x lead dust
+- Smelting recipe for lead dust → lead ingot
+
+## XP Converter Specifications
+
+| Tier | Max XP Storage | Max Energy Storage | Energy per Cycle | XP per Cycle |
+|------|----------------|-------------------|------------------|--------------|
+| Basic | 400 XP | 25,000 RF | 300 RF | 2 XP |
+| Advanced | 800 XP | 40,000 RF | 600 RF | 6 XP |
+| Elite | 1,600 XP | 55,000 RF | 1,200 RF | 12 XP |
+
+## Crafting Recipes
+
+### Basic XP Converter
+```
+O I O
+I C I
+O I O
+```
+- **C**: Machine Casing
+- **I**: Iron Ingot  
+- **O**: Obsidian
+
+### Advanced XP Converter
+```
+E S E
+G B G
+E S E
+```
+- **B**: Basic XP Converter
+- **G**: Gold Block
+- **E**: Emerald
+- **S**: Blaze Rod
+
+### Elite XP Converter
+```
+D B D
+N C N
+D B D
+```
+- **C**: Advanced XP Converter
+- **B**: Beacon
+- **D**: Diamond Block
+- **N**: Nether Star
+
+### Other Items
+- **Machine Casing**: Crafted with iron ingots and redstone
+- **Iron Gear**: Crafted with iron ingots in a gear pattern
+- **Lead Block**: 3x3 crafting grid of lead ingots
+- **Lead Ingot**: Smelted from lead ore
+
+## World Generation
+
+Lead ore generates naturally in the world and can be smelted into lead ingots. The ore follows standard Minecraft generation patterns.
+
+## Compatibility
+
+- **Minecraft**: 1.12.2
+- **Forge**: 14.23.5.2860
+- **Mekanism**: 1.12.2-9.8.3.390 (optional integration)
+
+## Installation
+
+1. Ensure you have Minecraft 1.12.2 and Forge 14.23.5.2860 installed
+2. Download the EnerGizeXP mod JAR file
+3. Place the JAR file in your `mods` folder
+4. Start Minecraft
+
+## Dependencies
+
+- **Required**: Minecraft Forge 1.12.2-14.23.5.2860
+- **Optional**: Mekanism 1.12.2-9.8.3.390 (for enhanced processing)
+
+## Development
+
+This mod is written in Java with Kotlin support and uses the Forge modding framework. The source code is available for reference and modification.
+
+### Building from Source
+
+1. Clone the repository
+2. Run `./gradlew build` to compile the mod
+3. The compiled JAR will be in the `build/libs` directory
+
+## License
+
+This mod is developed by Favoslav_. Please check the license file for specific terms.
+
+## Support
+
+For issues, questions, or contributions, please refer to the project's issue tracker or contact the developer, contact info can be found here [www.favoslav.cz](https://www.favoslav.cz/)
+.
+
+## Version History
+
+- **0.1.0**: Initial release with XP converters and lead material system
+
+---
+
+*EnerGizeXP - Converting experience into power since 2025*
+*Guaranteed support for mekanism.*
 
 ## For Developers
 
@@ -45,8 +168,8 @@ A Minecraft Forge mod for Minecraft 1.12.2 that provides energy and XP conversio
 ```
 src/main/java/mods/favoslav/energizexp/
 ├── EnerGizeXP.java          # Main mod class
-├── blocks/                   # Block implementations
-├── items/                    # Item implementations
+├── blocks/                   # Block implementations (XP Converters, Lead Ore)
+├── items/                    # Item implementations (Lead Ingot, Machine Casing)
 ├── registry/                 # Registration handlers
 ├── network/                  # Network packet handling
 ├── proxy/                    # Client/Server proxy classes
@@ -54,7 +177,7 @@ src/main/java/mods/favoslav/energizexp/
 ├── gui/                      # GUI implementations
 ├── client/                   # Client-side code
 ├── compatibility/            # Mod compatibility (Mekanism)
-└── world/                    # World generation
+└── world/                    # World generation (Lead Ore generation)
 ```
 
 ### Using as a Dependency
@@ -118,11 +241,19 @@ ResourceLocation texture = EnerGizeXP.resource("textures/items/example.png");
 
 ### Modifying the Mod
 
-#### Adding New Blocks/Items
+#### Adding New XP Converter Tiers
 
-1. Create your class in the appropriate package (`blocks/` or `items/`)
+1. Create a new block class in the `blocks/` package following the existing converter pattern
+2. Add the block to `RegistryHandler.java`
+3. Create the crafting recipe in `RegistryHandler.registerRecipes()`
+4. Add textures and models in `src/main/resources/assets/energizexp/`
+
+#### Adding New Materials
+
+1. Create item/block classes in the appropriate package
 2. Register in `RegistryHandler.java`
-3. Add textures and models in `src/main/resources/assets/energizexp/`
+3. Add world generation if needed in the `world/` package
+4. Create crafting recipes and smelting recipes
 
 #### Adding Compatibility
 
@@ -167,6 +298,7 @@ NetworkHandler.registerPacket(YourPacket.class, YourPacket::new);
 4. **Test your changes**:
    - Test in both single-player and multiplayer
    - Verify compatibility with Mekanism
+   - Test XP conversion rates and energy output
 5. **Submit a pull request**
 
 ### Troubleshooting
@@ -176,6 +308,7 @@ NetworkHandler.registerPacket(YourPacket.class, YourPacket::new);
 - **Gradle sync fails**: Ensure you're using JDK 8
 - **Mod not loading**: Check `mcmod.info` for correct mod ID
 - **Missing dependencies**: Run `./gradlew --refresh-dependencies`
+- **XP conversion not working**: Check if Mekanism is properly loaded
 
 #### Debug Mode
 
@@ -184,12 +317,26 @@ Enable debug logging in `build.gradle.kts`:
 property("forge.logging.console.level", "debug")
 ```
 
-### License
+### API Reference
 
-[Add your license information here]
+#### XP Converter Tiers
 
-### Support
+The mod provides three tiers of XP Converters with different specifications:
 
-- **Issues**: Report bugs and feature requests on GitHub
-- **Discord**: [Add Discord server link if available]
-- **Documentation**: Check the code comments for detailed API documentation
+- **Basic**: 400 XP storage, 25,000 RF storage, 300 RF per cycle
+- **Advanced**: 800 XP storage, 40,000 RF storage, 600 RF per cycle  
+- **Elite**: 1,600 XP storage, 55,000 RF storage, 1,200 RF per cycle
+
+#### Energy Conversion Rates
+
+Each converter tier has different XP-to-energy conversion rates:
+- **Basic**: 2 XP → 300 RF
+- **Advanced**: 6 XP → 600 RF
+- **Elite**: 12 XP → 1,200 RF
+
+#### Mekanism Integration
+
+When Mekanism is present, the mod automatically adds:
+- Lead ore enrichment recipes
+- Lead dust smelting recipes
+- Enhanced processing options
