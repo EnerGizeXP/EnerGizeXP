@@ -52,9 +52,9 @@ jobs:
     - name: Upload JAR to Existing Release
       run: |
         # Find the JAR file
-        JAR_FILE=$(find build/libs -name "*.jar" | head -1)
+        JAR_FILE=$(find build/libs -name "*-all.jar" | head -1)
         if [ -z "$JAR_FILE" ]; then
-          echo "No JAR file found in build/libs/"
+          echo "No -all JAR file found in build/libs/. Did you run shadowJar?"
           exit 1
         fi
         
