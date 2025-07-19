@@ -49,13 +49,9 @@ jobs:
       id: tag_name
       run: echo "tag_name=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
       
-    - name: Create Release
-      id: create_release
-      uses: softprops/action-gh-release@v1
+    - name: Upload to Tag
+      uses: actions/upload-artifact@v4
       with:
-        tag_name: ${{ steps.tag_name.outputs.tag_name }}
-        name: Release ${{ steps.tag_name.outputs.tag_name }}
-        draft: false
-        prerelease: false
-        files: build/libs/*.jar
-        generate_release_notes: true 
+        name: EnerGizeXP-${{ steps.tag_name.outputs.tag_name }}
+        path: build/libs/*.jar
+        retention-days: 30 
