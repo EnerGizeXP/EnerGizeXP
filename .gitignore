@@ -3,6 +3,9 @@ build/
 out/
 .gradle/
 gradle/
+!gradle/wrapper/
+!gradle/wrapper/gradle-wrapper.properties
+!gradle/wrapper/gradle-wrapper.jar
 ./assets/
 
 # Kotlin specific
