@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "up": "energizexp:blocks/xpconv_advanced_tb",
+    "down": "energizexp:blocks/xpconv_advanced_tb",
+    "north": "energizexp:blocks/xpconv_advanced_front",
+    "south": "energizexp:blocks/xpconv_advanced_side",
+    "east": "energizexp:blocks/xpconv_advanced_side",
+    "west": "energizexp:blocks/xpconv_advanced_side",
+    "particle": "energizexp:blocks/xpconv_advanced_side"
+  }
+}

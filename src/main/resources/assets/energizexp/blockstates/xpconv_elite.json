@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "energizexp:xpconv_elite", "y": 0 },
+    "facing=south": { "model": "energizexp:xpconv_elite", "y": 180 },
+    "facing=west": { "model": "energizexp:xpconv_elite", "y": 270 },
+    "facing=east": { "model": "energizexp:xpconv_elite", "y": 90 }
+  }
+}

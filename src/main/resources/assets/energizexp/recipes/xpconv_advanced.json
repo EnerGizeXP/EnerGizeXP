@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ESE",
+    "GBG",
+    "ESE"
+  ],
+  "key": {
+    "B": { "item": "energizexp:xpconv_basic" },
+    "G": { "item": "minecraft:gold_block" },
+    "E": { "item": "minecraft:emerald" },
+    "S": { "item": "minecraft:blaze_rod" }
+  },
+  "result": { "item": "energizexp:xpconv_advanced" }
+}

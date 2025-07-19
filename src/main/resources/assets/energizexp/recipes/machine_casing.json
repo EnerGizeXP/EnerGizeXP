@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "IGI",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "energizexp:lead_ingot"
+    },
+    "G": {
+      "item": "energizexp:iron_gear"
+    }
+  },
+  "result": {
+    "item": "energizexp:machine_casing"
+  }
+}
