@@ -19,8 +19,6 @@ jobs:
         java-version: '8'
         distribution: 'temurin'
         
-
-        
     - name: Make gradlew executable
       run: chmod +x ./gradlew
         
@@ -58,6 +56,13 @@ jobs:
         draft: false
         prerelease: false
         
+    - name: Debug Release Info
+      run: |
+        echo "Tag name: ${{ steps.tag_name.outputs.tag_name }}"
+        echo "Upload URL: ${{ steps.create_release.outputs.upload_url }}"
+        echo "Release ID: ${{ steps.create_release.outputs.id }}"
+        ls -la build/libs/
+        
     - name: Upload Release Asset
       uses: actions/upload-release-asset@v1
       env:
@@ -66,4 +71,5 @@ jobs:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: build/libs/*.jar
         asset_name: EnerGizeXP-${{ steps.tag_name.outputs.tag_name }}.jar
-        asset_content_type: application/java-archive 
+        asset_content_type: application/java-archive
+      if: steps.create_release.outputs.upload_url != '' 
