@@ -1,0 +1,47 @@
+# Gradle build output
+build/
+out/
+.gradle/
+gradle/
+
+# Kotlin specific
+*.kotlin_module
+.kotlin
+
+# IntelliJ IDEA / Android Studio
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VSCode
+.vscode/
+
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Minecraft / Forge specific
+run/
+
+# Local configs
+local.properties
+
+# Unused
+build.gradle2.kts

@@ -1,0 +1,13 @@
+[
+  {
+    "modid": "rfxp",
+    "name": "RfXp",
+    "description": "A mod that does things.",
+    "version": "0.1.0",
+    "mcversion": "1.12.2",
+    "authorList": ["Favoslav_"],
+    "credits": "Kotlin ForgeGradle template by orca.",
+    "logoFile": "",
+    "url": ""
+  }
+]

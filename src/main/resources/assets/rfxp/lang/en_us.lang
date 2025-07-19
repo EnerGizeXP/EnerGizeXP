@@ -1,0 +1,10 @@
+#PARSE_ESCAPES
+tile.energizexp.xpconv_basic.name=Basic XP Convertor
+tile.energizexp.xpconv_advanced.name=Advanced XP Convertor
+tile.energizexp.xpconv_elite.name=Elite XP Convertor
+item.energizexp.lead_ingot.name=Lead Ingot
+item.energizexp.iron_gear.name=Iron Gear
+tile.energizexp.lead_block.name=Lead Block
+tile.energizexp.lead_ore.name=Lead Ore
+tile.energizexp.machine_casing.name=Machine Casing
+itemGroup.energizexp=EnerGizeXP
