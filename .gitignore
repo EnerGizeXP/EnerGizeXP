@@ -3,6 +3,7 @@ build/
 out/
 .gradle/
 gradle/
+assets/
 
 # Kotlin specific
 *.kotlin_module
