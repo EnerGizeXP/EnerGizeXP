@@ -97,34 +97,6 @@ Lead ore generates naturally in the world and can be smelted into lead ingots. T
 - **Required**: Minecraft Forge 1.12.2-14.23.5.2860
 - **Optional**: Mekanism 1.12.2-9.8.3.390 (for enhanced processing)
 
-## Development
-
-This mod is written in Java with Kotlin support and uses the Forge modding framework. The source code is available for reference and modification.
-
-### Building from Source
-
-1. Clone the repository
-2. Run `./gradlew build` to compile the mod
-3. The compiled JAR will be in the `build/libs` directory
-
-## License
-
-This mod is developed by Favoslav_. Please check the license file for specific terms.
-
-## Support
-
-For issues, questions, or contributions, please refer to the project's issue tracker or contact the developer, contact info can be found here [www.favoslav.cz](https://www.favoslav.cz/)
-.
-
-## Version History
-
-- **0.1.0**: Initial release with XP converters and lead material system
-
----
-
-*EnerGizeXP - Converting experience into power since 2025*
-*Guaranteed support for mekanism.*
-
 ## For Developers
 
 ### Prerequisites
@@ -144,13 +116,8 @@ For issues, questions, or contributions, please refer to the project's issue tra
 
 2. **Setup the development environment**:
    ```bash
-   # On Linux/macOS
    ./gradlew setupDecompWorkspace
-   ./gradlew genIntellijRuns
-   
-   # On Windows
-   gradlew.bat setupDecompWorkspace
-   gradlew.bat genIntellijRuns
+   ./gradlew genIntellijRuns (or your prefered IDE)
    ```
 
 3. **Import into your IDE**:
@@ -205,7 +172,7 @@ dependencies {
 3. Add to your `build.gradle.kts`:
    ```gradle
    dependencies {
-       compileOnly files("libs/energizexp-0.1.0.jar")
+       compileOnly(files("libs/energizexp-0.1.0.jar"))
    }
    ```
 
@@ -245,7 +212,7 @@ ResourceLocation texture = EnerGizeXP.resource("textures/items/example.png");
 
 1. Create a new block class in the `blocks/` package following the existing converter pattern
 2. Add the block to `RegistryHandler.java`
-3. Create the crafting recipe in `RegistryHandler.registerRecipes()`
+3. Create the crafting recipe in `RegistryHandler.registerRecipes()` or in the `resources/assets/modid/recipes`
 4. Add textures and models in `src/main/resources/assets/energizexp/`
 
 #### Adding New Materials
@@ -308,7 +275,6 @@ NetworkHandler.registerPacket(YourPacket.class, YourPacket::new);
 - **Gradle sync fails**: Ensure you're using JDK 8
 - **Mod not loading**: Check `mcmod.info` for correct mod ID
 - **Missing dependencies**: Run `./gradlew --refresh-dependencies`
-- **XP conversion not working**: Check if Mekanism is properly loaded
 
 #### Debug Mode
 
@@ -334,9 +300,25 @@ Each converter tier has different XP-to-energy conversion rates:
 - **Advanced**: 6 XP → 600 RF
 - **Elite**: 12 XP → 1,200 RF
 
-#### Mekanism Integration
+### Building from Source
 
-When Mekanism is present, the mod automatically adds:
-- Lead ore enrichment recipes
-- Lead dust smelting recipes
-- Enhanced processing options
+1. Clone the repository
+2. Run `./gradlew build` to compile the mod
+3. The compiled JAR will be in the `build/libs` directory
+
+## License
+
+This mod is developed by Favoslav_. Please check the license file for specific terms.
+
+## Support
+
+For issues, questions, or contributions, please refer to the project's issue tracker or contact the developer, contact info can be found here [www.favoslav.cz](https://www.favoslav.cz/).
+
+## Version History
+
+- **0.1.0**: Initial release with XP converters and lead material system
+
+---
+
+*EnerGizeXP - Converting experience into power since 2025*
+*Guaranteed support for mekanism*
