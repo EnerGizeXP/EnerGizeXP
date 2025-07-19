@@ -61,7 +61,13 @@ jobs:
         # Get the tag name
         TAG_NAME="${{ steps.tag_name.outputs.tag_name }}"
         
-        # Upload the JAR to the existing release
-        gh release upload "$TAG_NAME" "$JAR_FILE" --repo "$GITHUB_REPOSITORY"
+        # Create the new filename
+        NEW_FILENAME="EnerGizeXP-$TAG_NAME.jar"
+        
+        # Copy and rename the JAR file
+        cp "$JAR_FILE" "$NEW_FILENAME"
+        
+        # Upload the renamed JAR to the existing release
+        gh release upload "$TAG_NAME" "$NEW_FILENAME" --repo "$GITHUB_REPOSITORY"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
