@@ -49,7 +49,7 @@ jobs:
       id: tag_name
       run: echo "tag_name=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
       
-    - name: Upload JAR to Tag
+    - name: Upload JAR to Existing Release
       run: |
         # Find the JAR file
         JAR_FILE=$(find build/libs -name "*.jar" | head -1)
@@ -61,11 +61,7 @@ jobs:
         # Get the tag name
         TAG_NAME="${{ steps.tag_name.outputs.tag_name }}"
         
-        # Create a release for the tag and upload the JAR
-        gh release create "$TAG_NAME" \
-          --title "Release $TAG_NAME" \
-          --notes "Automated build for $TAG_NAME" \
-          "$JAR_FILE" \
-          --repo "$GITHUB_REPOSITORY"
+        # Upload the JAR to the existing release
+        gh release upload "$TAG_NAME" "$JAR_FILE" --repo "$GITHUB_REPOSITORY"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
