@@ -33,8 +33,8 @@ public class EnerGizeXP {
   public static EnerGizeXP INSTANCE;
 
   @SidedProxy(
-      clientSide = "mods.favoslav.rfxp.proxy.ClientProxy",
-      serverSide = "mods.favoslav.rfxp.proxy.DedicatedProxy"
+      clientSide = "mods.favoslav.energizexp.proxy.ClientProxy",
+      serverSide = "mods.favoslav.energizexp.proxy.DedicatedProxy"
   )
   public static Proxy proxy;
 
