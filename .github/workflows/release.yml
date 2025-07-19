@@ -5,6 +5,10 @@ on:
     tags:
       - 'v*'
 
+permissions:
+  contents: write
+  actions: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -47,29 +51,11 @@ jobs:
       
     - name: Create Release
       id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: softprops/action-gh-release@v1
       with:
         tag_name: ${{ steps.tag_name.outputs.tag_name }}
-        release_name: Release ${{ steps.tag_name.outputs.tag_name }}
+        name: Release ${{ steps.tag_name.outputs.tag_name }}
         draft: false
         prerelease: false
-        
-    - name: Debug Release Info
-      run: |
-        echo "Tag name: ${{ steps.tag_name.outputs.tag_name }}"
-        echo "Upload URL: ${{ steps.create_release.outputs.upload_url }}"
-        echo "Release ID: ${{ steps.create_release.outputs.id }}"
-        ls -la build/libs/
-        
-    - name: Upload Release Asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: build/libs/*.jar
-        asset_name: EnerGizeXP-${{ steps.tag_name.outputs.tag_name }}.jar
-        asset_content_type: application/java-archive
-      if: steps.create_release.outputs.upload_url != '' 
+        files: build/libs/*.jar
+        generate_release_notes: true 
