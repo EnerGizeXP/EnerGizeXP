@@ -1,3 +1,5 @@
+<img width="1024" height="411" alt="EnerGizeXP_banner" src="https://github.com/user-attachments/assets/fd02c487-eb58-4370-b354-a79571a95dd8" />
+
 # EnerGizeXP
 
 A Minecraft Forge mod for Minecraft 1.12.2 that adds XP to Energy conversion machines and lead-based materials.
