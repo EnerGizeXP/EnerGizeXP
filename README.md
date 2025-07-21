@@ -29,7 +29,7 @@ When Mekanism is installed, the mod adds:
 - Enrichment Chamber recipe for lead ore → 2x lead dust
 - Smelting recipe for lead dust → lead ingot
 
-## XP Converter Specifications
+## XP Converter Specifications (_1 cycle = 10 ticks_)
 
 | Tier | Max XP Storage | Max Energy Storage | Energy per Cycle | XP per Cycle |
 |------|----------------|-------------------|------------------|--------------|
