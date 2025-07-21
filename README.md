@@ -322,6 +322,6 @@ For issues, questions, or contributions, please refer to the project's issue tra
 
 ---
 
-*EnerGizeXP - Converting experience into power since 2025*
+*EnerGizeXP - Converting power into experience since 2025*
 
 *Guaranteed support for mekanism*
