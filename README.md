@@ -1,3 +1,5 @@
+<img width="1024" height="411" alt="EnerGizeXP_banner" src="https://github.com/user-attachments/assets/fd02c487-eb58-4370-b354-a79571a95dd8" />
+
 # EnerGizeXP
 
 A Minecraft Forge mod for Minecraft 1.12.2 that adds XP to Energy conversion machines and lead-based materials.
@@ -27,13 +29,13 @@ When Mekanism is installed, the mod adds:
 - Enrichment Chamber recipe for lead ore → 2x lead dust
 - Smelting recipe for lead dust → lead ingot
 
-## XP Converter Specifications
+## XP Converter Specifications (_1 cycle = 10 ticks_)
 
-| Tier | Max XP Storage | Max Energy Storage | Energy per Cycle | XP per Cycle |
+| Tier | Max XP Storage | Max Energy Storage | XP per Cycle | Energy per Cycle |
 |------|----------------|-------------------|------------------|--------------|
-| Basic | 400 XP | 25,000 RF | 300 RF | 2 XP |
-| Advanced | 800 XP | 40,000 RF | 600 RF | 6 XP |
-| Elite | 1,600 XP | 55,000 RF | 1,200 RF | 12 XP |
+| Basic | 400 XP | 25,000 RF | 2 XP | 300 RF |
+| Advanced | 800 XP | 40,000 RF | 5 XP | 600 RF |
+| Elite | 1,600 XP | 55,000 RF | 12 XP | 1,200 RF |
 
 ## Crafting Recipes
 
@@ -320,5 +322,6 @@ For issues, questions, or contributions, please refer to the project's issue tra
 
 ---
 
-*EnerGizeXP - Converting experience into power since 2025*
+*EnerGizeXP - Converting power into experience since 2025*
+
 *Guaranteed support for mekanism*
