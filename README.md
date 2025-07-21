@@ -34,7 +34,7 @@ When Mekanism is installed, the mod adds:
 | Tier | Max XP Storage | Max Energy Storage | Energy per Cycle | XP per Cycle |
 |------|----------------|-------------------|------------------|--------------|
 | Basic | 400 XP | 25,000 RF | 300 RF | 2 XP |
-| Advanced | 800 XP | 40,000 RF | 600 RF | 6 XP |
+| Advanced | 800 XP | 40,000 RF | 600 RF | 5 XP |
 | Elite | 1,600 XP | 55,000 RF | 1,200 RF | 12 XP |
 
 ## Crafting Recipes
