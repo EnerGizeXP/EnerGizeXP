@@ -31,11 +31,11 @@ When Mekanism is installed, the mod adds:
 
 ## XP Converter Specifications (_1 cycle = 10 ticks_)
 
-| Tier | Max XP Storage | Max Energy Storage | Energy per Cycle | XP per Cycle |
+| Tier | Max XP Storage | Max Energy Storage | XP per Cycle | Energy per Cycle |
 |------|----------------|-------------------|------------------|--------------|
-| Basic | 400 XP | 25,000 RF | 300 RF | 2 XP |
-| Advanced | 800 XP | 40,000 RF | 600 RF | 5 XP |
-| Elite | 1,600 XP | 55,000 RF | 1,200 RF | 12 XP |
+| Basic | 400 XP | 25,000 RF | 2 XP | 300 RF |
+| Advanced | 800 XP | 40,000 RF | 5 XP | 600 RF |
+| Elite | 1,600 XP | 55,000 RF | 12 XP | 1,200 RF |
 
 ## Crafting Recipes
 
